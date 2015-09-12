@@ -126,20 +126,20 @@ app.controller('PingPong', function($scope){
   $scope.data={
     p1score:0,
     p2score:0,
-    total:0,
+    serverHits:0,
     serve:1,
     p1wins:0,
     p2wins:0
     };
   $scope.scoreKeeper1=function(){
     $scope.data.p1score +=1;
-    $scope.data.total +=1;
-    if($scope.data.total===2){
+    $scope.data.serverHits +=1;
+    if($scope.data.serverHits===2){
       $scope.data.serve = 2;
     }
-    else if($scope.data.total===4){
+    else if($scope.data.serverHits===4){
       $scope.data.serve=1;
-      $scope.data.total=0;
+      $scope.data.serverHits=0;
     }
     if($scope.data.p1score === 11){
       $scope.data.p1wins +=1;
@@ -150,13 +150,13 @@ app.controller('PingPong', function($scope){
   };
   $scope.scoreKeeper2=function(){
     $scope.data.p2score +=1;
-    $scope.data.total +=1;
-    if($scope.data.total===2){
+    $scope.data.serverHits +=1;
+    if($scope.data.serverHits===2){
       $scope.data.serve = 2;
     }
-    else if($scope.data.total===4){
+    else if($scope.data.serverHits===4){
       $scope.data.serve=1;
-      $scope.data.total=0;
+      $scope.data.serverHits=0;
     }
     if($scope.data.p1score === 11){
       $scope.data.p1wins +=1;
@@ -168,7 +168,7 @@ app.controller('PingPong', function($scope){
   $scope.reset=function(){
     $scope.data.p1score = 0;
     $scope.data.p2score = 0;
-    $scope.data.total = 0;
+    $scope.data.serverHits = 0;
     $scope.data.serve = 1;
   };
    $scope.resetAll=function(){
