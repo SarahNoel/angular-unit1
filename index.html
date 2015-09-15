@@ -178,7 +178,7 @@
 <div class = 'tight' ng-controller="symbol-repeat">
 <h3>Symbols</h3>
 <ul>
-  <li ng-repeat="symbol in symbols">
+  <li ng-repeat="symbol in symbols" ng-bind-html="symbol">
   {{symbol}}
   </li>
 </ul>
@@ -401,6 +401,7 @@
 <br>
 
     <script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.js"></script>
     <script type="text/javascript" src='js/main.js'></script>
   </body>
 </html>

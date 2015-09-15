@@ -1,5 +1,6 @@
+
 // add scripts
-var app = angular.module("myapp", []);
+var app = angular.module("myapp", ["ngSanitize"]);
 
 app.controller("HelloController", function($scope) {
   $scope.hello = {};
@@ -131,7 +132,7 @@ app.controller('PingPong', function($scope){
     p1wins:0,
     p2wins:0
     };
-  $scope.scoreKeeper1=function(){
+  $scope.scoreKeeper1=function(player){
     $scope.data.p1score +=1;
     $scope.data.serverHits +=1;
     if($scope.data.serverHits===2){
